@@ -12,4 +12,9 @@ function setNewSchool(schoolName, value){
 function displaySchoolValue(schoolName){
   client.get(`${schoolName}`);
 }
+
+displaySchoolValue('Holberton');
+setNewSchool('HolbertonSanFrancisco', '100');
+displaySchoolValue('HolbertonSanFrancisco');
+
 await client.disconnect();
