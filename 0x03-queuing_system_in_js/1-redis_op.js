@@ -10,11 +10,12 @@ function setNewSchool(schoolName, value){
 }
 
 function displaySchoolValue(schoolName){
-  client.get(`${schoolName}`);
+  const value = client.get(`${schoolName}`);
+  console.log = valuue
 }
 
 displaySchoolValue('Holberton');
 setNewSchool('HolbertonSanFrancisco', '100');
 displaySchoolValue('HolbertonSanFrancisco');
 
-await client.disconnect();
+client.disconnect();
