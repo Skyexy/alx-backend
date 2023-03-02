@@ -9,6 +9,11 @@
     "test": "./node_modules/.bin/mocha --require @babel/register --exit",
     "dev": "nodemon --exec babel-node --presets @babel/preset-env"
   },
+  "babel": {
+    "presets": [
+      @babel/preset-env"
+    ]
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
