@@ -1,5 +1,4 @@
-const kue = require("kue");
-const queue = kue.createQueue();
+import kue from "kue";
 
 const numbers = ['4153518780', '4153518781'];
 
@@ -16,3 +15,11 @@ function sendNotification(phoneNumber, message, job, done){
   );
   done();
 }
+
+const queue = kue.createQueue();
+const queueName = "push_notification_code_2";
+
+queue.process(queueName, 2, (job, done) => {
+  const { phoneNumber, message } = job.data;
+  sendNotification(phoneNumber, message, job, done);
+});
