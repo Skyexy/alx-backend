@@ -1,6 +1,14 @@
 var redis = require("redis"),
 client = redis.createClient();
 
+client
+  .on("error", (error) => {
+    if (error) console.log(`Redis client not connected to the server: ${err}`);
+  })
+  .on("ready", () => {
+    console.log("Redis client connected to the server");
+  });
+
 const hashkey = "HolbertonSchools";
 
 const values = {
